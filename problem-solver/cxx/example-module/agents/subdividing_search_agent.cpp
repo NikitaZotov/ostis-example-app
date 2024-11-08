@@ -4,13 +4,7 @@
 * (See accompanying file COPYING.MIT or copy at http://opensource.org/licenses/MIT)
 */
 
-#include "SubdividingSearchAgent.hpp"
-
-#include <sc-agents-common/utils/GenerationUtils.hpp>
-#include <sc-agents-common/utils/IteratorUtils.hpp>
-
-using namespace std;
-using namespace utils;
+#include "subdividing_search_agent.hpp"
 
 ScAddr SubdividingSearchAgent::GetActionClass() const
 {

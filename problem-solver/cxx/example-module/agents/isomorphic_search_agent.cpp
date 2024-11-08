@@ -4,17 +4,9 @@
  * COPYING.MIT or copy at http://opensource.org/licenses/MIT)
  */
 
-#include "IsomorphicSearchAgent.hpp"
-
-#include <iostream>
+#include "isomorphic_search_agent.hpp"
 
 #include <sc-memory/sc_memory.hpp>
-#include <sc-memory/sc_stream.hpp>
-
-#include <sc-agents-common/utils/IteratorUtils.hpp>
-
-using namespace std;
-using namespace utils;
 
 ScAddr IsomorphicSearchAgent::GetActionClass() const
 {
@@ -34,9 +26,9 @@ ScResult IsomorphicSearchAgent::DoProgram(ScAction & action)
   ScStructure result = m_context.GenerateStructure();
   try
   {
-    formSearchResults(scTemplateNode, result);
+    FormSearchResults(scTemplateNode, result);
   }
-  catch (ScException const & exception)
+  catch (utils::ScException const & exception)
   {
     SC_AGENT_LOG_ERROR(exception.Message());
     return action.FinishWithError();
@@ -46,18 +38,18 @@ ScResult IsomorphicSearchAgent::DoProgram(ScAction & action)
   return action.FinishSuccessfully();
 }
 
-void IsomorphicSearchAgent::formSearchResults(ScAddr const & scTemplateNode, ScStructure & result)
+void IsomorphicSearchAgent::FormSearchResults(ScAddr const & scTemplateNode, ScStructure & result)
 {
-  clearPreviousSearchResults(scTemplateNode);
+  ClearPreviousSearchResults(scTemplateNode);
 
   ScTemplate scTemplate;
   m_context.BuildTemplate(scTemplate, scTemplateNode);
 
-  ScAddr const & resultsSet = formNewResultsSetConstruction(scTemplateNode, result);
+  ScAddr const & resultsSet = FormNewResultsSetConstruction(scTemplateNode, result);
 
   ScAddrVector searchResults;
   m_context.SearchByTemplate(scTemplate, [&searchResults, this](ScTemplateSearchResultItem const & item) {
-    searchResults.push_back(emplaceItemElementsInStructure(item));
+    searchResults.push_back(EmplaceItemElementsInStructure(item));
   });
 
   if (searchResults.empty())
@@ -77,7 +69,7 @@ void IsomorphicSearchAgent::formSearchResults(ScAddr const & scTemplateNode, ScS
   }
 }
 
-void IsomorphicSearchAgent::clearPreviousSearchResults(ScAddr const & scTemplateNode)
+void IsomorphicSearchAgent::ClearPreviousSearchResults(ScAddr const & scTemplateNode)
 {
   ScIterator5Ptr previousResultsStructuresSetsIterator = m_context.CreateIterator5(
       scTemplateNode,
@@ -97,7 +89,7 @@ void IsomorphicSearchAgent::clearPreviousSearchResults(ScAddr const & scTemplate
   }
 }
 
-ScAddr IsomorphicSearchAgent::formNewResultsSetConstruction(
+ScAddr IsomorphicSearchAgent::FormNewResultsSetConstruction(
     ScAddr const & scTemplateNode,
     ScStructure & result)
 {
@@ -111,7 +103,7 @@ ScAddr IsomorphicSearchAgent::formNewResultsSetConstruction(
   return resultsSetTuple;
 }
 
-ScAddr IsomorphicSearchAgent::emplaceItemElementsInStructure(ScTemplateSearchResultItem const & item)
+ScAddr IsomorphicSearchAgent::EmplaceItemElementsInStructure(ScTemplateSearchResultItem const & item)
 {
   ScAddr const & searchResultStructure = m_context.GenerateNode(ScType::NodeConstStruct);
 

@@ -18,13 +18,13 @@ ui_menu_isomorphic_search
 	(* <- lang_en;; *);;
 
 ui_menu_isomorphic_search => ui_nrel_command_template:
-	[*
-		action_search_isomorphic_structures _-> ._action_search_isomorphic_structures_instance
-			(*
-				_-> ui_arg_1;;
-			*);;
-		._action_search_isomorphic_structures_instance <-_ action;;
-	*];;
+[*
+	action_search_isomorphic_structures _-> ._action_search_isomorphic_structures_instance
+		(*
+			_-> ui_arg_1;;
+		*);;
+	._action_search_isomorphic_structures_instance <-_ action;;
+*];;
 
 ui_menu_isomorphic_search => ui_nrel_command_lang_template: [Какие структуры соответствуют заданному шаблону $ui_arg_1?] (* <- lang_ru;; *);;
 ui_menu_isomorphic_search => ui_nrel_command_lang_template: [What are structures that correspondents to template $ui_arg_1?] (* <- lang_en;; *);;

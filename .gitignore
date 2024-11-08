@@ -11,6 +11,7 @@ cmake-build-release
 *.db
 *.txt
 !conanfile.txt
+!CMakeLists.txt
 *.log
 
 __pycache__

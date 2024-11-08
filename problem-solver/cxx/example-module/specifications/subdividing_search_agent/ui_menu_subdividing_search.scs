@@ -6,7 +6,7 @@ ui_menu_subdividing_search
 	[На что разбивается указанная сущность?]
 	(* <- lang_ru;; *);
 => nrel_idtf: 
-	[Запрос поиски разбиений указанной сущности]
+	[Запрос поиска разбиений указанной сущности]
 	(* <- lang_ru;; *);;
 
 ui_menu_subdividing_search 
@@ -18,13 +18,13 @@ ui_menu_subdividing_search
 	(* <- lang_en;; *);;
 
 ui_menu_subdividing_search => ui_nrel_command_template:
-	[*
-		action_search_subdividing _-> ._action_search_subdividing_instance
-			(*
-				_-> rrel_1:: ui_arg_1;;
-			*);;
-		._action_search_subdividing_instance <-_ action;;
-	*];;
+[*
+	action_search_subdividing _-> ._action_search_subdividing_instance
+		(*
+			_-> rrel_1:: ui_arg_1;;
+		*);;
+	._action_search_subdividing_instance <-_ action;;
+*];;
 
 ui_menu_subdividing_search => ui_nrel_command_lang_template: [На что разбивается $ui_arg_1] (* <- lang_ru;; *);;
 ui_menu_subdividing_search => ui_nrel_command_lang_template: [What is subdividing of $ui_arg_1] (* <- lang_en;; *);;

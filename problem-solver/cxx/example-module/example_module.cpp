@@ -4,10 +4,10 @@
 * (See accompanying file COPYING.MIT or copy at http://opensource.org/licenses/MIT)
 */
 
-#include "exampleModule.hpp"
+#include "example_module.hpp"
 
-#include "agents/SubdividingSearchAgent.hpp"
-#include "agents/IsomorphicSearchAgent.hpp"
+#include "agents/subdividing_search_agent.hpp"
+#include "agents/isomorphic_search_agent.hpp"
 
 SC_MODULE_REGISTER(ExampleModule)
 ->Agent<SubdividingSearchAgent>()

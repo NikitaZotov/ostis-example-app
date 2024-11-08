@@ -1,9 +1,7 @@
-# common
-ostis-web-platform/kb
-
 # components
-kb/
+knowledge-base
 
 # specifications
-problem-solver/cxx/exampleModule/specifications/agent_of_isomorphic_search
-problem-solver/cxx/exampleModule/specifications/agent_of_subdividing_search
+problem-solver/cxx/example-module/specifications/isomorphic_search_agent
+problem-solver/cxx/example-module/specifications/subdividing_search_agent
+problem-solver/scp

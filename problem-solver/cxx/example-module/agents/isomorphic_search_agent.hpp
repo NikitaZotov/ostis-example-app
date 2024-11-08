@@ -17,11 +17,11 @@ public:
 
   ScResult DoProgram(ScAction & action);
 
-  void formSearchResults(ScAddr const & scTemplateNode, ScStructure & result);
+  void FormSearchResults(ScAddr const & scTemplateNode, ScStructure & result);
 
-  void clearPreviousSearchResults(ScAddr const & scTemplate);
+  void ClearPreviousSearchResults(ScAddr const & scTemplate);
 
-  ScAddr formNewResultsSetConstruction(ScAddr const & scTemplate, ScStructure & result);
+  ScAddr FormNewResultsSetConstruction(ScAddr const & scTemplate, ScStructure & result);
 
-  ScAddr emplaceItemElementsInStructure(ScTemplateSearchResultItem const & item);
+  ScAddr EmplaceItemElementsInStructure(ScTemplateSearchResultItem const & item);
 };
