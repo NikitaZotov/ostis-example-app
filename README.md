@@ -39,6 +39,7 @@ cmake --build --preset conan-release
 cd interface/sc-web
 ./scripts/install_dependencies.sh
 npm run build
+cd ../..
 ```
 
 ## Build knowledge base
