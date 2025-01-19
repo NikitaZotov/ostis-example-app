@@ -8,12 +8,28 @@ OSTIS example app is an ostis-system based on [**ostis-web-platform**](https://g
 
 ## Installation
 
+### Clone repository
+
 ```sh
 git clone https://github.com/NikitaZotov/ostis-example-app.git
 cd ostis-example-app
 git checkout release/0.10.0
 git submodule update --init --recursive
+```
 
+### Install Conan
+
+```sh
+# Use pipx to install conan if not already installed
+# Install pipx first using guide: https://pipx.pypa.io/stable/installation/
+pipx install conan
+pipx ensurepath
+# relaunch your shell after installation
+```
+
+### Install components
+
+```sh
 conan remote add ostis-ai https://conan.ostis.net/artifactory/api/conan/ostis-ai-sc-machine
 
 conan install . --build=missing
